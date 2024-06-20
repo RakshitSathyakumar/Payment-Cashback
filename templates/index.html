@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashback Suggestion</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find the Best Cashback Offer</h1>
+        <form method="post">
+            <label for="spend">Spend Amount:</label>
+            <input type="number" id="spend" name="spend" required>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if offer %}
+            <h2>Best Offer</h2>
+            <p>Payment Method: {{ offer.payment_method_name }}</p>
+            <p>Cashback Percentage: {{ offer.cashback_percentage }}%</p>
+            <p>Maximum Cashback: ₹{{ offer.max_cashback }}</p>
+            <p>Minimum Spend: ₹{{ offer.min_spend }}</p>
+            <p>Eligible Categories: {{ offer.eligible_categories }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
