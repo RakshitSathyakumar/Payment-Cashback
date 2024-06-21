@@ -33,7 +33,6 @@ offers = [
             }
         ]
     },
-
 ]
 
 # Flatten the offers into a list of dictionaries
@@ -72,8 +71,6 @@ knn = NearestNeighbors(n_neighbors=1)
 knn.fit(X)
 
 # Suggestion function
-
-
 def suggest_max_cashback(spend, category):
     if category not in all_categories:
         return "Category not found."
@@ -85,7 +82,7 @@ def suggest_max_cashback(spend, category):
     best_offer_index = indices[0][0]
 
     best_offer = flattened_offers[best_offer_index]
-    best_price = spend - (spend*0.01*best_offer['cashback_percentage'])
+    best_price = spend - (spend * 0.01 * best_offer['cashback_percentage'])
     savings = spend - best_price
     return {
         "payment_method_name": best_offer['payment_method_name'],
@@ -94,11 +91,9 @@ def suggest_max_cashback(spend, category):
         "savings": savings
     }
 
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', offer=None)
-
 
 @app.route('/cashback', methods=['POST'])
 def cashback():
@@ -110,6 +105,5 @@ def cashback():
     best_offer = suggest_max_cashback(spend, category)
     return jsonify(best_offer)
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
