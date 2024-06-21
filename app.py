@@ -1,5 +1,3 @@
-
-
 from flask import Flask, request, render_template, jsonify
 from sklearn.neighbors import NearestNeighbors
 import numpy as np
