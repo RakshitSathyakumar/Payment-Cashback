@@ -9,12 +9,6 @@ offers = [
         "payment_method_name": "SBI Credit Card",
         "offers": [
             {
-                "cashback_percentage": 10,
-                "max_cashback": 1500,
-                "min_spend": 5000,
-                "eligible_categories": ["Electronics", "Household"]
-            },
-            {
                 "cashback_percentage": 5,
                 "max_cashback": 500,
                 "min_spend": 2000,
@@ -26,33 +20,10 @@ offers = [
         "payment_method_name": "HDFCredit Card",
         "offers": [
             {
-                "cashback_percentage": 5,
-                "max_cashback": 1500,
-                "min_spend": 5400,
-                "eligible_categories": ["Electronics", "Household", "Accessories"]
-            },
-            {
                 "cashback_percentage": 4.35,
                 "max_cashback": 500,
                 "min_spend": 2000,
                 "eligible_categories": ["Electronics", "Accessories", "Household"]
-            }
-        ]
-    },
-    {
-        "payment_method_name": "ICICI Credit Card",
-        "offers": [
-            {
-                "cashback_percentage": 10.2,
-                "max_cashback": 1800,
-                "min_spend": 2500,
-                "eligible_categories": ["Electronics", "Household"]
-            },
-            {
-                "cashback_percentage": 12,
-                "max_cashback": 500,
-                "min_spend": 4300,
-                "eligible_categories": ["Fashion", "Electronics"]
             }
         ]
     },
@@ -83,27 +54,9 @@ offers = [
                 "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
             },
             {
-                "cashback_percentage": 6.5,
-                "max_cashback": 75,
-                "min_spend": 4000,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-            {
-                "cashback_percentage": 7.5,
-                "max_cashback": 750,
-                "min_spend": 4500,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-            {
                 "cashback_percentage": 8.5,
                 "max_cashback": 750,
                 "min_spend": 6500,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-            {
-                "cashback_percentage": 9.5,
-                "max_cashback": 750,
-                "min_spend": 8500,
                 "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
             },
         ]
