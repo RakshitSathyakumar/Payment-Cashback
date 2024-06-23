@@ -12,7 +12,7 @@ offers = [
                 "cashback_percentage": 10,
                 "max_cashback": 1500,
                 "min_spend": 5000,
-                "eligible_categories": ["Electronics", "Home Appliances"]
+                "eligible_categories": ["Electronics", "Household"]
             },
             {
                 "cashback_percentage": 5,
@@ -23,14 +23,89 @@ offers = [
         ]
     },
     {
-        "payment_method_name": "Amazon Pay ICICI Credit Card",
+        "payment_method_name": "HDFCredit Card",
+        "offers": [
+            {
+                "cashback_percentage": 5,
+                "max_cashback": 1500,
+                "min_spend": 5400,
+                "eligible_categories": ["Electronics", "Household", "Accessories"]
+            },
+            {
+                "cashback_percentage": 4.35,
+                "max_cashback": 500,
+                "min_spend": 2000,
+                "eligible_categories": ["Electronics", "Accessories", "Household"]
+            }
+        ]
+    },
+    {
+        "payment_method_name": "ICICI Credit Card",
+        "offers": [
+            {
+                "cashback_percentage": 10.2,
+                "max_cashback": 1800,
+                "min_spend": 2500,
+                "eligible_categories": ["Electronics", "Household"]
+            },
+            {
+                "cashback_percentage": 12,
+                "max_cashback": 500,
+                "min_spend": 4300,
+                "eligible_categories": ["Fashion", "Electronics"]
+            }
+        ]
+    },
+    {
+        "payment_method_name": "SBI Debit Card",
+        "offers": [
+            {
+                "cashback_percentage": 8.2,
+                "max_cashback": 1800,
+                "min_spend": 8000,
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
+            {
+                "cashback_percentage": 5,
+                "max_cashback": 500,
+                "min_spend": 2000,
+                "eligible_categories": ["Fashion", "Groceries"]
+            }
+        ]
+    },
+    {
+        "payment_method_name": "Amazon Pay Wallet",
         "offers": [
             {
                 "cashback_percentage": 5,
                 "max_cashback": 750,
                 "min_spend": 3000,
-                "eligible_categories": ["All"]
-            }
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
+            {
+                "cashback_percentage": 6.5,
+                "max_cashback": 75,
+                "min_spend": 4000,
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
+            {
+                "cashback_percentage": 7.5,
+                "max_cashback": 750,
+                "min_spend": 4500,
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
+            {
+                "cashback_percentage": 8.5,
+                "max_cashback": 750,
+                "min_spend": 6500,
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
+            {
+                "cashback_percentage": 9.5,
+                "max_cashback": 750,
+                "min_spend": 8500,
+                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
+            },
         ]
     },
 ]
@@ -71,6 +146,8 @@ knn = NearestNeighbors(n_neighbors=1)
 knn.fit(X)
 
 # Suggestion function
+
+
 def suggest_max_cashback(spend, category):
     if category not in all_categories:
         return "Category not found."
@@ -91,9 +168,11 @@ def suggest_max_cashback(spend, category):
         "savings": savings
     }
 
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', offer=None)
+
 
 @app.route('/cashback', methods=['POST'])
 def cashback():
@@ -104,6 +183,7 @@ def cashback():
         return jsonify({"offer": "no"})
     best_offer = suggest_max_cashback(spend, category)
     return jsonify(best_offer)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
