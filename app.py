@@ -12,7 +12,7 @@ offers = [
                 "cashback_percentage": 5,
                 "max_cashback": 500,
                 "min_spend": 2000,
-                "eligible_categories": ["Fashion", "Groceries"]
+                "eligible_categories": ["Fashion", "Groceries","Electronics"]
             }
         ]
     },
@@ -22,45 +22,11 @@ offers = [
             {
                 "cashback_percentage": 4.35,
                 "max_cashback": 500,
-                "min_spend": 2000,
+                "min_spend":3520,
                 "eligible_categories": ["Electronics", "Accessories", "Household"]
             }
         ]
-    },
-    {
-        "payment_method_name": "SBI Debit Card",
-        "offers": [
-            {
-                "cashback_percentage": 8.2,
-                "max_cashback": 1800,
-                "min_spend": 8000,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-            {
-                "cashback_percentage": 5,
-                "max_cashback": 500,
-                "min_spend": 2000,
-                "eligible_categories": ["Fashion", "Groceries"]
-            }
-        ]
-    },
-    {
-        "payment_method_name": "Amazon Pay Wallet",
-        "offers": [
-            {
-                "cashback_percentage": 5,
-                "max_cashback": 750,
-                "min_spend": 3000,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-            {
-                "cashback_percentage": 8.5,
-                "max_cashback": 750,
-                "min_spend": 6500,
-                "eligible_categories": ["Electronics", "Household", "Fashion", "Groceries", "Accessories"]
-            },
-        ]
-    },
+    }
 ]
 
 # Flatten the offers into a list of dictionaries
